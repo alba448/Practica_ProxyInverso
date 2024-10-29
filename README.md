@@ -108,31 +108,3 @@ A continuación nos pedirá que añadamos una contraseña y que la verifiquemos.
 ![foto](./images/htpasswd-comando.png)
 
 El archivo se copiará directamente en la ubicación de nuestro proyecto al haber creado el volumen en el `docker-compose.yml`.
-
-## Pruebas en el navegador
-
-Ahora abrimos el navegador y buscamos las siguientes rutas:
-
-- `http://proxyalba.com:80` o `https://proxyalba.com:443`
-
-<img src="./images/proxyalba.png" alt="archivos" style="padding-left:40px; padding-bottom:30px">
-
-- Accedemos a `alba.com`
-
-<img src="./images/alba.png" alt="archivos" style="padding-left:40px; padding-bottom:10px">
-
-<img src="./images/alba404.png" alt="archivos" style="padding-left:40px; padding-bottom:30px">
-
-- Accedemos a `garcia.com`
-
-<img src="./images/garcia.png" alt="archivos" style="padding-left:40px; padding-bottom:10px">
-
-<img src="./images/garcia404.png" alt="archivos" style="padding-left:40px; padding-bottom:30px">
-
-- Accedemos a área privada `garcia.com/privado` ➡️ **Aquí introducimos los credenciales generados con htpasswd**
-
-<img src="./images/login-privado.png" alt="archivos" style="padding-left:40px; padding-bottom:10px">
-
-<img src="./images/privado.png" alt="archivos" style="padding-left:40px; padding-bottom:10px">
-
-<img src="./images/privado401.png" alt="archivos" style="padding-left:40px; padding-bottom:80px">

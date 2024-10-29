@@ -3,8 +3,8 @@ services:
   nginx:
     image: ubuntu/nginx # imagen de Nginx
     container_name: nginx_server # nombre del contenedor
-    ports:
-      - "8081:80" # mapeo de puertos  HTTP
+    #ports:
+     # - "8081:80" # mapeo de puertos  HTTP
     volumes:
       - ./nginx/sites-available:/etc/nginx/sites-available # archivos de configuración de hosts virtuales
       - ./nginx/website:/var/www/html/ # directorio de los sitios web
@@ -15,8 +15,8 @@ services:
   apache:
     image: ubuntu/apache2 # imagen de Apache
     container_name: apache_server # nombre del contenedor
-    ports:
-      - "8082:80" # mapeo de puertos  HTTP
+    #ports:
+      #- "8082:80" # mapeo de puertos  HTTP
     volumes:
       - ./apache/sites-available:/etc/apache2/sites-available # archivos de configuración de hosts virtuales
       - ./apache/website:/var/www/html/ # directorio de los sitios web
