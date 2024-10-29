@@ -24,7 +24,7 @@
 
 - Crear el directorio `website` dentro de `nginx` y añadir en su interior los diferentes archivos HTML que compondrán el sitio web en `/nombre`.
 
-<img src="./images/jaime-com.png" alt="archivos" style="padding-left:40px; padding-bottom:30px">
+<img src="./images/alba-com.png" alt="archivos" style="padding-left:40px; padding-bottom:30px">
 
 - Crear el directorio `apache`, donde se ubicará la configuración del sitio web con Apache.
 
@@ -35,7 +35,7 @@
 <img src="./images/default-apache.png" alt="archivos" style="padding-left:40px; padding-bottom:30px">
 
 - Crear el directorio `website` dentro de `apache` y añadir en su interior los distintos archivos HTML que compondrán los sitios web en `/apellido` y `/privado`. Además, incluir el archivo `.htaccess` con la configuración de acceso.
-<img src="./images/leon-com.png" alt="archivos" style="padding-left:40px; padding-bottom:30px">
+<img src="./images/garcia-com.png" alt="archivos" style="padding-left:40px; padding-bottom:30px">
 
  - Crear el directorio `htpasswd` dentro de `apache` y dentro añadir el archivo `.htpasswd`, el cual generaremos más adelante.
 
@@ -98,16 +98,12 @@ docker exec -it nginx_server /bin/bash
 
 Creamos el archivo `.htpasswd` con el usuario y contraseña que elijamos.
 
-Una vez dentro de la terminal de nuestro servidor Apache, navegamos a la ruta `/etc/apache2`.
-
-Usamos el comando `ls -a` para listar los archivos ocultos y verificar si el archivo `.htpasswd` ya existe. Si no existe, lo generaremos; si ya está presente, lo sobreescribiremos.
-
-Generamos el archivo con el siguiente comando:
+Abrimos Openssl y añadiños el siguiente comando:
 ```bash
-htpasswd -c /etc/apache2/.htpasswd nombre_usuario
+openssl passwd
 ```
 
-En `usuario`, introduciremos el nombre del usuario que deseemos, y la contraseña la proporcionaremos cuando nos la solicite.
+A continuación nos pedirá que añadamos una contraseña y que la verifiquemos.
 
 ![foto](./images/htpasswd-comando.png)
 
@@ -119,19 +115,19 @@ Ahora abrimos el navegador y buscamos las siguientes rutas:
 
 - `http://proxyalba.com:80` o `https://proxyalba.com:443`
 
-<img src="./images/proxyjaime.png" alt="archivos" style="padding-left:40px; padding-bottom:30px">
+<img src="./images/proxyalba.png" alt="archivos" style="padding-left:40px; padding-bottom:30px">
 
 - Accedemos a `alba.com`
 
-<img src="./images/jaime.png" alt="archivos" style="padding-left:40px; padding-bottom:10px">
+<img src="./images/alba.png" alt="archivos" style="padding-left:40px; padding-bottom:10px">
 
-<img src="./images/jaime404.png" alt="archivos" style="padding-left:40px; padding-bottom:30px">
+<img src="./images/alba404.png" alt="archivos" style="padding-left:40px; padding-bottom:30px">
 
 - Accedemos a `garcia.com`
 
-<img src="./images/leon.png" alt="archivos" style="padding-left:40px; padding-bottom:10px">
+<img src="./images/garcia.png" alt="archivos" style="padding-left:40px; padding-bottom:10px">
 
-<img src="./images/leon404.png" alt="archivos" style="padding-left:40px; padding-bottom:30px">
+<img src="./images/garcia404.png" alt="archivos" style="padding-left:40px; padding-bottom:30px">
 
 - Accedemos a área privada `garcia.com/privado` ➡️ **Aquí introducimos los credenciales generados con htpasswd**
 
